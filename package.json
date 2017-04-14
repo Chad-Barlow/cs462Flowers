@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/Chad-Barlow/cs462Flowers#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "body-parser": "^1.17.1",
+    "client-sessions": "^0.7.0",
+    "connect": "^3.6.0",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.1",
+    "express": "^4.15.2",
+    "node-foursquare": "^0.3.0",
+    "urijs": "^1.18.10"
   }
 }
