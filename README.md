@@ -25,6 +25,3 @@ APIs used:
 
 Work plan:
 Chris will initially focus on things from the flower shop angle, including the Twilio messages, and Cameron will focus on the driver interactions, including working with the Google Maps API. Chad will work on the front-end clients and connectors. We will continue to shift and reevaluate responsibilities as they become evident from working on the project.
-
-Project Overview Design:
- 
