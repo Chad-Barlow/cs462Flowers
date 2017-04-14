@@ -1,0 +1,22 @@
+{
+  "name": "flowers",
+  "version": "1.0.0",
+  "description": "CS462 Final Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chad-Barlow/cs462Flowers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chad-Barlow/cs462Flowers/issues"
+  },
+  "homepage": "https://github.com/Chad-Barlow/cs462Flowers#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
