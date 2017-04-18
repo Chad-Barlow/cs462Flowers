@@ -1,24 +1,113 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Flower Delivery Service</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+        crossorigin="anonymous">
+    </script>
+
+    <style>
+        #content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .login-section {
+            width: 500px;
+            margin: 10% auto;
+            float: none;
+        }
+        .header {
+            background-color: #5BCB87;
+            height: 50px;
+        }
+        .login-header {
+            width: 500px;
+            color: #ffffff;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            height: 123px;
+            background-color: #337ab7;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-top: 30px;
+        }
+        .login-body {
+            width: 500px;
+            height: 348px;
+            height: auto;
+            color: #26bf63;
+            color: #202020;
+            background-color: #ffffff;
+            border-top-width: 0px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-color: #d8d8d8;
+            border-style: solid;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        form {
+            width: 75%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
 <body>
+    <header id="header-region">
+        <div class="header">
 
-<h1>Flowers </h1>
-<p>Chad, Chris, Cameron </p>
+        </div>
+    </header>
 
-<form action="/action_page.php">
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-	</br>
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-	</br>
-    <button type="submit">Login</button></br>
-    <input type="checkbox" checked="checked"> Remember me </br>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
+    <div id="content" class="container">
 
+        <div class="row">
+            <div class="login-section">
+                <div class="login-header">
+                    <p style="text-align: center; font-size: 40px;">Welcome Back!</p>
+                </div>
+
+                <div class="login-body">
+                    <br />
+                    <br />
+                    <form action="/action_page.php" class="form-horizontal">
+                        <div class="form-group">
+                            <label><b>Username</b></label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user fa-lg"></i></div>
+                                <input type="text" class="form-control input-lg" id="username" placeholder="Username" name="uname" value="" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><b>Password</b></label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-lock fa-lg"></i></div>
+                                <input type="password" class="form-control input-lg" id="password" placeholder="Password" name="psw" value="" required>
+                            </div>
+                            <p style="text-align: center; margin-top: 10px;"><span class="psw">Forgot <a href="#">password?</a></span></p>
+                            <p style="text-align: center;"><input type="checkbox" checked="checked"> Remember me </input></p>
+                        </div>
+
+                        <div class="form-group" style="text-align: center;">
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 90%;">Login</button>
+                            <br />
+                            <br />
+                        </div>                   
+                    </form>
+                </div>                
+            </div>
+        </div>        
+    </div>
 </body>
 </html>
-
