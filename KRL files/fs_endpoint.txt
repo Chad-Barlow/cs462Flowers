@@ -3,13 +3,16 @@ ruleset flower_shop_endpoint {
     name "flower_shop_endpoint"
     description << A ruleset that serves as the endpoint for flower shops to talk to in the flower delivery system >>
     author "Chris Ward"
+    shares __testing
   }
 
   global {
     __testing = { "events": [ { "domain": "delivery", "type": "ready",
-                                "attrs": ["shopID", "destination"] },
+                                "attrs": ["shopID", "dest"] },
                               { "domain": "rfq", "type": "delivery_ready",
-                                "attrs": ["shopID", "destination"] } ] 
+                                "attrs": ["shopID", "dest"] },
+                              { "domain": "rfq", "type": "bid_available",
+                                "attrs": ["shopID", "driverID"] } ] 
     }
   }
 
@@ -17,11 +20,14 @@ ruleset flower_shop_endpoint {
     select when delivery ready
     pre {
       shopID = event:attr("shopID")
-      destination = event:attr("destination")
+      dest = event:attr("dest")
     }
+    send_directive("ready") with
+      shop = shopID
+      dest = dest
     always {
       raise rfq event "delivery_ready"
-        attributes { "shopID": shopID, "destination": destination }
+        attributes { "shopID": shopID, "dest": dest }
     }
   }
 }
