@@ -1,0 +1,27 @@
+ruleset flower_shop_endpoint {
+  meta {
+    name "flower_shop_endpoint"
+    description << A ruleset that serves as the endpoint for flower shops to talk to in the flower delivery system >>
+    author "Chris Ward"
+  }
+
+  global {
+    __testing = { "events": [ { "domain": "delivery", "type": "ready",
+                                "attrs": ["shopID", "destination"] },
+                              { "domain": "rfq", "type": "delivery_ready",
+                                "attrs": ["shopID", "destination"] } ] 
+    }
+  }
+
+  rule report_delivery_ready {
+    select when delivery ready
+    pre {
+      shopID = event:attr("shopID")
+      destination = event:attr("destination")
+    }
+    always {
+      raise rfq event "delivery_ready"
+        attributes { "shopID": shopID, "destination": destination }
+    }
+  }
+}
