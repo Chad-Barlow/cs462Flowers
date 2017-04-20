@@ -44,6 +44,55 @@ app.get('/', (req,res)=>{
     //res.redirect('login');
 });
 
+app.get('/thanks', (req,res)=>{
+    res.sendFile(path.join(__dirname + '/thankyou.html'));
+});
+
+
+app.get('/bid', (req,res)=>{
+   
+http.get('http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:8080/sky/event/cj1pvaakt0001i0p9ffenyuza/2005/rfq/delivery_ready?shopID='+req.query.shopID+'&dest='+req.query.dest, (res) => {
+  const { statusCode } = res;
+  const contentType = res.headers['content-type'];
+
+  let error;
+  if (statusCode !== 200) {
+    error = new Error(`Request Failed.\n` +
+                      `Status Code: ${statusCode}`);
+  } else if (!/^application\/json/.test(contentType)) {
+    error = new Error(`Invalid content-type.\n` +
+                      `Expected application/json but received ${contentType}`);
+  }
+  if (error) {
+    console.error(error.message);
+    //consume response data to free up memory
+        res.resume();
+            return;
+              }
+   
+                res.setEncoding('utf8');
+                  let rawData = '';
+                    res.on('data', (chunk) => { rawData += chunk; });
+                      res.on('end', () => {
+                          try {
+                                const parsedData = JSON.parse(rawData);
+                                      console.log(parsedData);
+                                          } catch (e) {
+                                                console.error(e.message);
+                                                    }
+                                                      });
+                                                      }).on('error', (e) => {
+                                                        console.error(`Got error: ${e.message}`);
+                                                        });   
+
+
+
+
+
+
+  res.sendFile(path.join(__dirname + '/store.html'));
+});
+
 app.listen(3005, function () {
     console.log('Example app listening on port 3005!');
 })
