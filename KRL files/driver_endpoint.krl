@@ -25,7 +25,7 @@ ruleset delivery_service_endpoint {
 //                    14352411146,
 //                    dest
 //                   )
-    http:post(<<http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:3005/thanks>>)
+    http:get(<<http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:3005/thanks>>)
   }
 
   rule auto_accept {
