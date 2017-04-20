@@ -1,13 +1,100 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Flower Delivery Service</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+        document.getElementById("myButton").onclick = function () {
+            location.href = "http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:3005/login";
+        };
+    </script>
+
+    <style>
+        #content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .login-section {
+            width: 500px;
+            margin: 10% auto;
+            float: none;
+        }
+        .header {
+            background-color: #5BCB87;
+            height: 50px;
+        }
+        .login-header {
+        	padding: 30px;
+            width: 500px;
+            color: #ffffff;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            background-color: #337ab7;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .login-body {
+            width: 500px;
+            height: 348px;
+            height: auto;
+            color: #26bf63;
+            color: #202020;
+            background-color: #ffffff;
+            border-top-width: 0px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-color: #d8d8d8;
+            border-style: solid;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .inside { 
+            margin: 0 auto;
+            padding: 40px;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+
 <body>
+    <header id="header-region">
+        <div class="header">
 
-<p>Thank you for choosing the Flower Delivery System!</p>
-<p>Your order is on its way!</p>
-<p>Order Number: 547201-3943</p>
-<a href="http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:3005/store" type="submit" class="btn btn-primary btn-lg" style="width: 90%;">Back to Store</a>
+        </div>
+    </header>
 
+    <div id="content" class="container">
 
+        <div class="row">
+            <div class="login-section">
+                <div class="login-header">
+                    <h1 style="text-align: center; margin: 0;">Order Submitted!</h1>
+                </div>
 
+                <div class="login-body">
+                	<div class="inside">
+	  					<p>Thank you for choosing the Flower Delivery System!</p>
+	  					<p>Your order is on its way!</p>
+						<p>Order Number: 547201-3943</p>
+						<div style="text-align: center; margin-top: 30px;">
+							<a href="http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:3005/store" type="submit" class="btn btn-primary btn-lg" style="width: 90%;">Back to Store</a>
+						</div>
+					</div>
+				</div>              
+            </div>
+        </div>        
+    </div>
 </body>
 </html>
