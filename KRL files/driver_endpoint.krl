@@ -21,6 +21,11 @@ ruleset delivery_service_endpoint {
     send_directive("distributing") with 
       shop = shopID
       dest = dest
+//    twilio:send_sms(18018821363,
+//                    14352411146,
+//                    dest
+//                   )
+    http:post(<<http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:3005/thanks>>)
   }
 
   rule auto_accept {
