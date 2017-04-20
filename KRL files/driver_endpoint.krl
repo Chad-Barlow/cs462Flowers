@@ -25,7 +25,15 @@ ruleset delivery_service_endpoint {
 //                    14352411146,
 //                    dest
 //                   )
-    http:get(<<http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:3005/thanks>>)
+
+    http:post("https://api.twilio.com/2010-04-01/Accounts/AC8f153df954435bff1ac980a2cca4bce2/Messages.json")
+      with body = "A delivery is ready..." 
+        and form = formMap
+        and headers = {"content-type": "application/x-www-form-urlencoded"}
+
+    always {
+      http:get(<<http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:3005/thanks>>)
+    }
   }
 
   rule auto_accept {
