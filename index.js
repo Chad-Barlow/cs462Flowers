@@ -35,12 +35,13 @@ app.use(function(req, res, next) {
     } else {
       next();
     }*/
-    console.log("Fake session created!");
+    console.log("Session created!");
     next();
 });
 
 app.get('/', (req,res)=>{
-    res.redirect('login');
+    res.sendFile(path.join(__dirname + '/login.html'));
+    //res.redirect('login');
 });
 
 app.listen(3005, function () {
