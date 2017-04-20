@@ -44,6 +44,11 @@ app.get('/', (req,res)=>{
     //res.redirect('login');
 });
 
+app.get('/thanks', (req,res)=>{
+    res.sendFile(path.join(__dirname + '/thankyou.html'));
+});
+
+
 app.get('/bid', (req,res)=>{
    
 http.get('http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:8080/sky/event/cj1pvaakt0001i0p9ffenyuza/2005/rfq/delivery_ready?shopID='+req.query.shopID+'&dest='+req.query.dest, (res) => {
