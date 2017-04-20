@@ -32,7 +32,7 @@ ruleset delivery_service_endpoint {
         and headers = {"content-type": "application/x-www-form-urlencoded"}
 
     always {
-      http:get(<<http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:3005/thanks>>)
+      http:get(<<http://ec2-54-202-97-114.us-west-2.compute.amazonaws.com:3005/thankyou.html>>)
     }
   }
 
